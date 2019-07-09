@@ -16,13 +16,13 @@ import javafx.stage.Stage;
  * @author Kika
  */
 public class AffineEncryptor extends Application {
-    
+
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/Views/welcomeScreenFXMLDocument.fxml"));
-        
+
         Scene scene = new Scene(root);
-        
+
         stage.setScene(scene);
         stage.show();
     }
@@ -31,11 +31,11 @@ public class AffineEncryptor extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+
+        Models.AffineEncrypter ae = new Models.AffineEncrypter(new int[]{17, 3});
+        System.out.println(ae.encrypte("code"));
+        System.out.println(ae.decrypte("lhct"));
         launch(args);
-        Models.AffineEncrypter ae= new Models.AffineEncrypter(new int[]{17,3});
-        System.out.println("fghjkl"+ae.encrypte("code"));
-        System.out.println("fghjkl"+ae.decrypte("lhct"));
-             
     }
-    
+
 }

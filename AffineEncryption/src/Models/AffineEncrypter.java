@@ -7,17 +7,19 @@ public class AffineEncrypter {
     public final int[] key;
     public static ArrayList<Character> alphabet;
     public static int[][] inverse;
-    static boolean isInited=false;
+    static boolean isInited = false;
+
     public AffineEncrypter(int[] key) {
-        if(!isInited) init();
+        if (!isInited) {
+            init();
+        }
         if (isValid(key)) {
             this.key = key;
         } else {
             this.key = null;
             System.err.println("nuuuuulll");
         }
-        
-        
+
     }
 
     public String encrypte(String note) {
@@ -30,6 +32,7 @@ public class AffineEncrypter {
             int cNum = alphabet.indexOf(character);
             int cEnc = (key[0] * cNum + key[1]) % 26;
             noteEncrypted += alphabet.get(cEnc).toString();
+            System.out.println("encrypted word content " + noteEncrypted);
         }
         return noteEncrypted;
 
@@ -42,13 +45,11 @@ public class AffineEncrypter {
         String noteDecrypted = "";
         char[] array = note.toCharArray();
         for (char character : array) {
-            System.out.println("Models.AffineEncrypter.decrypte() for");
-            int a=getInverse(key[0]);
+            int a = getInverse(key[0]);
             int cNum = alphabet.indexOf(character);
-            System.out.println("Models.AffineEncrypter.decrypte() cNum "+cNum);
-            int cDec = ((cNum-key[1])*a)%26;
-            System.out.println("Models.AffineEncrypter.decrypte() Cdec "+cDec);
+            int cDec = Math.floorMod(((cNum - key[1]) * a), 26);
             noteDecrypted += alphabet.get(cDec).toString();
+            System.out.println("decrypted word content " + noteDecrypted);
         }
         return noteDecrypted;
 
@@ -68,11 +69,9 @@ public class AffineEncrypter {
         return false;
     }
 
-
-    public int getInverse(int a){
-        for(int i=0;i<13;i++){
-            if(inverse[0][i]==a){
-                System.out.println("success getInverse "+a+"***"+inverse[1][i]);
+    public int getInverse(int a) {
+        for (int i = 0; i < 13; i++) {
+            if (inverse[0][i] == a) {
                 return inverse[1][i];
             }
         }
@@ -132,6 +131,6 @@ public class AffineEncrypter {
         alphabet.add('x');
         alphabet.add('y');
         alphabet.add('z');
-        isInited=true;
+        isInited = true;
     }
 }
