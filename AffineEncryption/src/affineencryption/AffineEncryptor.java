@@ -5,6 +5,7 @@
  */
 package affineencryption;
 
+import Models.Server;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -31,10 +32,13 @@ public class AffineEncryptor extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-
-        Models.AffineEncrypter ae = new Models.AffineEncrypter(new int[]{17, 3});
-        System.out.println(ae.encrypte("code"));
-        System.out.println(ae.decrypte("lhct"));
+        Runnable serverThread=new Runnable() {
+            @Override
+            public void run() {
+               new Server();
+            }
+        };
+        serverThread.run();
         launch(args);
     }
 

@@ -3,7 +3,7 @@ package Models;
 import java.util.ArrayList;
 
 public class AffineEncrypter {
-
+    public static final int[] ourKeys=new int[]{17,3};
     public final int[] key;
     public static ArrayList<Character> alphabet;
     public static int[][] inverse;
@@ -16,10 +16,17 @@ public class AffineEncrypter {
         if (isValid(key)) {
             this.key = key;
         } else {
-            this.key = null;
+            this.key = ourKeys;
             System.err.println("nuuuuulll");
         }
 
+    }
+
+    public AffineEncrypter() {
+         if (!isInited) {
+            init();
+        }
+         this.key = ourKeys;
     }
 
     public String encrypte(String note) {
