@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" fx:id="parent" prefHeight="463.0" prefWidth="587.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Controllers.SuccessSendFXMLController">
+   <children>
+      <ImageView fitHeight="469.0" fitWidth="610.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../UiImages/Protection%2001.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="22.0" layoutY="33.0" text="Your Note Is Send" textFill="#381e60">
+         <font>
+            <Font name="Digital-7 Mono" size="32.0" />
+         </font>
+      </Label>
+      <Label layoutX="359.0" layoutY="408.0" text="Successfully" textFill="#ffc82f">
+         <font>
+            <Font name="Digital-7 Mono" size="32.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
