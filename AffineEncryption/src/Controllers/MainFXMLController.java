@@ -11,9 +11,11 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 
 /**
@@ -28,7 +30,7 @@ public class MainFXMLController implements Initializable {
     private AnchorPane parent;
 
     @FXML
-    private Circle admin_avatar_container;
+    private Circle sender_avatar_container;
 
     @FXML
     private JFXTextField noteToSendTextField;
@@ -60,6 +62,7 @@ public class MainFXMLController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        //sender_avatar_container.setFill(new ImagePattern(new Image("\\UiImages\\imenPic.jpg")));
     }
 
     public void setTheLastNote(String note) {
