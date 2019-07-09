@@ -6,23 +6,62 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" fx:id="parent" prefHeight="463.0" prefWidth="587.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Controllers.SuccessSendFXMLController">
+<AnchorPane id="AnchorPane" fx:id="parent" prefHeight="463.0" prefWidth="587.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.SuccessSendFXMLController">
    <children>
       <ImageView fitHeight="469.0" fitWidth="610.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../UiImages/Protection%2001.jpg" />
+            <Image url="@../UiImages/66455186_2366067673667788_5843317922629419008_n.png" />
          </image>
       </ImageView>
-      <Label layoutX="22.0" layoutY="33.0" text="Your Note Is Send" textFill="#381e60">
+      <Label layoutX="163.0" layoutY="99.0" text="Your Note Is Send" textFill="#eb4040">
          <font>
-            <Font name="Digital-7 Mono" size="32.0" />
+            <Font name="Bauhaus 93" size="32.0" />
          </font>
       </Label>
-      <Label layoutX="359.0" layoutY="408.0" text="Successfully" textFill="#ffc82f">
+      <Label layoutX="283.0" layoutY="378.0" text="Successfully" textFill="#fcd672">
          <font>
-            <Font name="Digital-7 Mono" size="32.0" />
+            <Font name="Bauhaus 93" size="32.0" />
          </font>
       </Label>
+      <ImageView fitHeight="28.0" fitWidth="24.0" layoutX="524.0" layoutY="404.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../UiImages/66445577_434368440484831_7067521328705699840_n.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="211.0" fitWidth="247.0" layoutX="189.0" layoutY="144.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../UiImages/rocket-ship.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="38.0" fitWidth="43.0" layoutX="10.0" layoutY="231.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../UiImages/paper-plane(2).png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="38.0" fitWidth="43.0" layoutX="461.0" layoutY="352.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../UiImages/paper-plane(2).png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="38.0" fitWidth="43.0" layoutX="63.0" layoutY="340.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../UiImages/paper-plane(2).png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="28.0" fitWidth="24.0" layoutX="149.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../UiImages/66445577_434368440484831_7067521328705699840_n.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="28.0" fitWidth="24.0" layoutX="408.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../UiImages/66445577_434368440484831_7067521328705699840_n.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="28.0" fitWidth="24.0" layoutX="548.0" layoutY="158.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../UiImages/66445577_434368440484831_7067521328705699840_n.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

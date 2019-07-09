@@ -43,6 +43,7 @@ public class WelcomeScreenController implements Initializable {
         MainFXMLController controller = loader.getController();
         stage.setResizable(false);
         stage.show();
+        controller.init();
 
     }
 

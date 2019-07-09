@@ -6,42 +6,86 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="parent" prefHeight="463.0" prefWidth="587.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.MainFXMLController">
+
+<StackPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.MainFXMLController">
    <children>
-      <Circle fx:id="admin_avatar_container" fill="DODGERBLUE" layoutX="95.0" layoutY="87.0" radius="49.0" stroke="#313851" strokeType="INSIDE" />
-      <Label layoutX="181.0" layoutY="79.0" text="Nour El Imane">
-         <font>
-            <Font name="Bauhaus 93" size="22.0" />
-         </font></Label>
-      <HBox alignment="CENTER" layoutX="41.0" layoutY="400.0" spacing="20.0">
-         <children>
-            <JFXTextField fx:id="noteToSendTextField" alignment="TOP_CENTER" focusColor="#81ab1f" prefHeight="25.0" prefWidth="440.0" promptText="Your note " />
-            <ImageView fx:id="sendNoteImgV" fitHeight="37.0" fitWidth="42.0" onMouseClicked="#sendMsg" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../UiImages/paper-plane.png" />
-               </image></ImageView>
-         </children>
-      </HBox>
-      <ImageView fitHeight="151.0" fitWidth="548.0" layoutX="34.0" layoutY="224.0" onMouseEntered="#showCryptedNote" onMouseExited="#hideCryptedNote" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="471.0" fitWidth="590.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../UiImages/Smartphone%20011.png" />
-         </image></ImageView>
-      <Label fx:id="receivedNoteLabel" layoutX="209.0" layoutY="253.0" prefHeight="17.0" prefWidth="213.0" text="Received Note is here" visible="false">
-         <font>
-            <Font name="Bauhaus 93" size="20.0" />
-         </font></Label>
-      <ImageView fitHeight="112.0" fitWidth="147.0" layoutX="491.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../UiImages/Smartphone%2003.png" />
+            <Image url="@../UiImages/66455186_2366067673667788_5843317922629419008_n.png" />
          </image>
       </ImageView>
-      <Label fx:id="cryptedNoteLabe" layoutX="344.0" layoutY="167.0" prefHeight="15.0" prefWidth="202.0" text="Crypteded Note" visible="false">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="12.0" />
-         </font>
-      </Label>
+      <AnchorPane id="AnchorPane" fx:id="parent" prefHeight="464.0" prefWidth="574.0">
+         <children>
+            <Circle fx:id="admin_avatar_container" fill="#fcebc5" layoutX="99.0" layoutY="91.0" radius="63.0" stroke="#fcd672" strokeType="INSIDE" strokeWidth="2.0" />
+            <Label layoutX="181.0" layoutY="52.0" text="Nour El Imane" textFill="#eb4040">
+               <font>
+                  <Font name="Bauhaus 93" size="28.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER" layoutX="41.0" layoutY="400.0" spacing="20.0">
+               <children>
+                  <JFXTextField fx:id="noteToSendTextField" alignment="TOP_CENTER" focusColor="#81ab1f" prefHeight="25.0" prefWidth="440.0" promptText="Your note " />
+                  <ImageView fx:id="sendNoteImgV" fitHeight="37.0" fitWidth="42.0" onMouseClicked="#sendMsg" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../UiImages/paper-plane.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <ImageView fitHeight="151.0" fitWidth="548.0" layoutX="21.0" layoutY="235.0" onMouseEntered="#showCryptedNote" onMouseExited="#hideCryptedNote" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../UiImages/Smartphone%20011.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="receivedNoteLabel" layoutX="185.0" layoutY="273.0" prefHeight="28.0" prefWidth="344.0" text="Received Note is here">
+               <font>
+                  <Font name="Bauhaus 93" size="20.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="girlImg" fitHeight="112.0" fitWidth="147.0" layoutX="481.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../UiImages/Smartphone%2003.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="cryptedNoteLabe" layoutX="349.0" layoutY="211.0" prefHeight="15.0" prefWidth="202.0" text="Crypteded Note" textFill="#4d4d4d">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font>
+            </Label>
+            <HBox alignment="TOP_CENTER" layoutX="198.0" layoutY="95.0" spacing="5.0">
+               <children>
+                  <ImageView fitHeight="21.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../UiImages/like-black-heart-button.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="21.0" fitWidth="17.0" layoutX="10.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../UiImages/like-black-heart-button.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="37.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../UiImages/happy.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="21.0" fitWidth="17.0" layoutX="10.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../UiImages/like-black-heart-button.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="21.0" fitWidth="17.0" layoutX="10.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../UiImages/like-black-heart-button.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
    </children>
-</AnchorPane>
+</StackPane>

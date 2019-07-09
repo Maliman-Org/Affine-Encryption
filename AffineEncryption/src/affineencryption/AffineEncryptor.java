@@ -32,7 +32,7 @@ public class AffineEncryptor extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Client.sendAnote("imen");
+        //Client.sendAnote("imen");
         launch(args);
     }   
 
