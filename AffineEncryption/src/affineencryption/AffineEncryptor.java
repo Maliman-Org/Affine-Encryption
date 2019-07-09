@@ -5,6 +5,8 @@
  */
 package affineencryption;
 
+import Models.AffineEncrypter;
+import Models.Client;
 import Models.Server;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -32,14 +34,8 @@ public class AffineEncryptor extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Runnable serverThread=new Runnable() {
-            @Override
-            public void run() {
-               new Server();
-            }
-        };
-        serverThread.run();
+        Client.sendAnote("imen");
         launch(args);
-    }
+    }   
 
 }

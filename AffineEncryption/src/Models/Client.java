@@ -13,12 +13,13 @@ public class Client {
     public static String USED_CLIENT_IP = "192.168.1.3";
     public static final String USED_SERVER_IP = "192.168.1.3";
     public static InetAddress MY_IP;
-    public final int MY_PORT = 7776;
+    public final int MY_PORT = 7779;
     public InetAddress SERVER_IP;
     public static final int SERVER_PORT = 7777;
     Socket socket = null;
     DataOutputStream msg = null;
     static AffineEncrypter encrypter = new AffineEncrypter();
+    private static Client instance = new Client();
 
     public Client() {
         try {
@@ -63,7 +64,7 @@ public class Client {
                     msg.writeUTF(stringMsg);
                     try {
                         msg.flush();
-                        System.out.println("msg send is successfully");
+                        System.out.println("msg: " + stringMsg + " is send");
                         closeDataOutputStream();
                     } catch (IOException ex) {
                         System.err.println("IOException while sending the msg");
@@ -106,9 +107,12 @@ public class Client {
     }
 
     public static void sendAnote(String note) {
-        Client client = new Client();
-        client.send(encrypter.encrypte(note));
-        client.closeSoket();
+        instance.send(encrypter.encrypte(note));
+    }
+
+    public static void close() {
+        instance.closeSoket();
+        instance = null;
     }
 
 }
