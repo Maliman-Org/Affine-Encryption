@@ -29,7 +29,7 @@
          <image>
             <Image url="@../UiImages/Smartphone%20011.png" />
          </image></ImageView>
-      <Label fx:id="receivedNoteLabel" layoutX="209.0" layoutY="253.0" prefHeight="17.0" prefWidth="213.0" text="Received Note is here">
+      <Label fx:id="receivedNoteLabel" layoutX="209.0" layoutY="253.0" prefHeight="17.0" prefWidth="213.0" text="Received Note is here" visible="false">
          <font>
             <Font name="Bauhaus 93" size="20.0" />
          </font></Label>

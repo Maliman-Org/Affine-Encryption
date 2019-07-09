@@ -10,8 +10,8 @@ import java.net.*;
  */
 public class Client {
 
-    public static String USED_CLIENT_IP = "192.168.1.3";
-    public static final String USED_SERVER_IP = "192.168.1.3";
+    public static String USED_CLIENT_IP = "192.168.56.1";
+    public static final String USED_SERVER_IP = "192.168.56.1";
     public static InetAddress MY_IP;
     public final int MY_PORT = 7779;
     public InetAddress SERVER_IP;

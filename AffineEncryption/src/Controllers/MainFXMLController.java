@@ -43,17 +43,17 @@ public class MainFXMLController implements Initializable {
     private Label cryptedNoteLabe;
 
     @FXML
-     void hideCryptedNote(MouseEvent event) {
-
-    }
-
-    @FXML
-     void sendMsg(MouseEvent event) {
+    void hideCryptedNote(MouseEvent event) {
 
     }
 
     @FXML
     void showCryptedNote(MouseEvent event) {
+
+    }
+
+    @FXML
+    void sendMsg(MouseEvent event) {
 
     }
 
