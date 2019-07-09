@@ -1,7 +1,6 @@
 package Models;
 
 //package tpsocket;
-
 import java.io.*;
 import java.net.*;
 
@@ -19,7 +18,7 @@ public class Client {
     public static final int SERVER_PORT = 7777;
     Socket socket = null;
     DataOutputStream msg = null;
-    public static final int senario = 1;
+    static AffineEncrypter encrypter = new AffineEncrypter();
 
     public Client() {
         try {
@@ -54,34 +53,7 @@ public class Client {
         }
     }
 
-    public void sendAnInteger(int intMsg) {
-        if (socket != null) {
-            OutputStream output = null;
-            try {
-                output = socket.getOutputStream();
-                msg = new DataOutputStream(output);
-                try {
-                    msg.writeInt(intMsg);
-                    try {
-                        msg.flush();
-                        System.out.println("msg send is successfully");
-                        closeDataOutputStream();
-                    } catch (IOException ex) {
-                        System.err.println("IOException while sending the msg");
-                    }
-                } catch (IOException ex) {
-                    System.err.println("IOException while assigning the int to the msg");
-                }
-            } catch (IOException ex) {
-                System.err.println("IOException while creating OutputStream");
-            }
-
-        } else {
-            System.err.println("soket is null i can't send the int msg");
-        }
-    }
-
-    public void sendAString(String stringMsg) {
+    public void send(String stringMsg) {
         if (socket != null) {
             OutputStream output = null;
             try {
@@ -133,28 +105,10 @@ public class Client {
         }
     }
 
-    public static void executeStringSenario() {
+    public static void sendAnote(String note) {
         Client client = new Client();
-        client.sendAString("Slm");
+        client.send(encrypter.encrypte(note));
         client.closeSoket();
-    }
-
-    public static void executeIntSenario() {
-        Client client = new Client();
-        client.sendAnInteger(5);
-        client.closeSoket();
-    }
-
-    public static void execute(int senario) {
-        if (senario == 1) {
-            executeStringSenario();
-        } else {
-            executeIntSenario();
-        }
-    }
-
-    public static void main(String[] args) {
-        execute(senario);
     }
 
 }

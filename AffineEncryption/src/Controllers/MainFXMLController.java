@@ -15,11 +15,13 @@ import javafx.fxml.Initializable;
  * @author Kika
  */
 public class MainFXMLController implements Initializable {
-
+public static MainFXMLController instance=null;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-    
+    public void setTheLastNote(String note){
+        
+    }
 }

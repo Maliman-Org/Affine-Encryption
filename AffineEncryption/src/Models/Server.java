@@ -1,11 +1,11 @@
 package Models;
 
 //package tpsocket;
-
 import java.io.*;
 import java.net.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.application.Platform;
 
 /**
  *
@@ -20,21 +20,18 @@ public class Server {
     ServerSocket serverSocket = null;
     Socket socket = null;
     DataInputStream msg;
-    public static final int senario = 1;
+    static AffineEncrypter encrypter = new AffineEncrypter();
 
-    public Server(int senario) {
+    public Server() {
         try {
             MY_IP = Inet4Address.getByName(USED_SERVER_IP);
             try {
                 serverSocket = new ServerSocket(MY_PORT, MAX_IN_CNX, MY_IP);
                 System.err.println("the server is waiting for connexions ...");
-                if (senario == 1) {
-                    executeStringSenario();
-                } else {
-                    executeIntSenario();
-                }
+                socket = serverSocket.accept();
+                receiveNote();
             } catch (IllegalArgumentException argumentException) {
-                System.err.println("IllegalArgumentException the chosen port : "+MY_PORT+" is not in the valid rage which is 0 - 65535");
+                System.err.println("IllegalArgumentException the chosen port : " + MY_PORT + " is not in the valid rage which is 0 - 65535");
             } catch (SecurityException se) {
                 System.err.println("SecurityException the security manager of Server didnt allow the operation");
             } catch (IOException ex) {
@@ -46,42 +43,28 @@ public class Server {
 
     }
 
-    public void receiveString() {
+    public void receiveNote() {
         InputStream inputStream = null;
         try {
             inputStream = socket.getInputStream();
             msg = new DataInputStream(inputStream);
             String stringMsg;
             try {
-                stringMsg = msg.readUTF();
+                stringMsg = encrypter.decrypte(msg.readUTF());
                 inputStream.close();
                 System.out.println("A msg is received from the client( IP= " + socket.getInetAddress().toString() + " & PORT = "
                         + socket.getPort() + " ) with content: " + stringMsg);
-                closeSokets();
-
+                closeSoket();
+                final String note = stringMsg;
+                Platform.runLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        Controllers.MainFXMLController.instance.setTheLastNote(note);
+                    }
+                }
+                );
             } catch (IOException ex) {
                 System.err.println("IOException while receiving the string to the msg");
-            }
-        } catch (IOException ex) {
-            System.err.println("IOException while creating InputStream");
-        }
-
-    }
-
-    public void receiveInt() {
-        InputStream inputStream = null;
-        try {
-            inputStream = socket.getInputStream();
-            msg = new DataInputStream(inputStream);
-            int intMsg;
-            try {
-                intMsg = msg.readInt();
-                inputStream.close();
-                System.out.println("A msg is received from the client( IP= " + socket.getInetAddress().toString() + " & PORT = "
-                        + socket.getPort() + " ) with content: " + intMsg);
-                closeSokets();
-            } catch (IOException ex) {
-                System.err.println("IOException while receiving the int msg");
             }
         } catch (IOException ex) {
             System.err.println("IOException while creating InputStream");
@@ -101,38 +84,18 @@ public class Server {
         }
     }
 
-    public void closeSokets() {
+    public void closeSoket() {
         try {
             socket.close();
-            serverSocket.close();
             socket = null;
-            serverSocket = null;
             System.out.println("close sokets done");
+            System.err.println("the server is waiting for connexions ...");
+            socket = serverSocket.accept();
+            receiveNote();
+
         } catch (IOException ex) {
             System.err.println("IOException while closing the server sockets");
         }
 
-    }
-
-    public void executeStringSenario() {
-        try {
-            socket = serverSocket.accept();
-            receiveString();
-        } catch (IOException ex) {
-            System.err.println("IOException while creating server soket");
-        }
-    }
-
-    public void executeIntSenario() {
-        try {
-            socket = serverSocket.accept();
-            receiveInt();
-        } catch (IOException ex) {
-            System.err.println("IOException while creating server soket");
-        }
-    }
-
-    public static void main(String[] args) {
-        new Server(senario);
     }
 }
