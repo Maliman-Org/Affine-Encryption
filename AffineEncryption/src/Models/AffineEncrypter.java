@@ -32,7 +32,7 @@ public class AffineEncrypter {
             int cNum = alphabet.indexOf(character);
             int cEnc = (key[0] * cNum + key[1]) % 26;
             noteEncrypted += alphabet.get(cEnc).toString();
-            System.out.println("encrypted word content " + noteEncrypted);
+           // System.out.println("encrypted word content " + noteEncrypted);
         }
         return noteEncrypted;
 
@@ -49,7 +49,7 @@ public class AffineEncrypter {
             int cNum = alphabet.indexOf(character);
             int cDec = Math.floorMod(((cNum - key[1]) * a), 26);
             noteDecrypted += alphabet.get(cDec).toString();
-            System.out.println("decrypted word content " + noteDecrypted);
+            //System.out.println("decrypted word content " + noteDecrypted);
         }
         return noteDecrypted;
 
