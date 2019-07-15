@@ -32,8 +32,16 @@ public class AffineEncryptor extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        //Client.sendAnote("imen");
+        Runnable runnable = new Runnable() {
+            public void run() {
+                new Server().start();
+            }
+        };
+        Thread thread=new Thread(runnable);
+                thread.start();
         launch(args);
+
+        
     }   
 
 }

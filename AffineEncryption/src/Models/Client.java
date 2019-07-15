@@ -13,21 +13,21 @@ public class Client {
     public static String USED_CLIENT_IP = "192.168.56.1";
     public static final String USED_SERVER_IP = "192.168.56.1";
     public static InetAddress MY_IP;
-    public final int MY_PORT = 7779;
+    public int MY_PORT = 1080;
     public InetAddress SERVER_IP;
-    public static final int SERVER_PORT = 7777;
+    public static final int SERVER_PORT = 7007;//7000
     Socket socket = null;
     DataOutputStream msg = null;
     static AffineEncrypter encrypter = new AffineEncrypter();
-    private static Client instance = new Client();
-
+    private static Client instance;
+    
     public Client() {
         try {
             MY_IP = Inet4Address.getByName(USED_CLIENT_IP);
             try {
                 SERVER_IP = Inet4Address.getByName(USED_SERVER_IP);
                 try {
-                    socket = new Socket(SERVER_IP, SERVER_PORT, MY_IP, MY_PORT);
+                    socket = new Socket(SERVER_IP,SERVER_PORT);
                     System.out.println("Client Soket is successfully created");
                 } catch (IllegalArgumentException argumentException) {
                     System.err.println("IllegalArgumentException the port is not in the valid rage which is 0 - 65535");
@@ -54,7 +54,7 @@ public class Client {
         }
     }
 
-    public void send(String stringMsg) {
+    public boolean send(String stringMsg) {
         if (socket != null) {
             OutputStream output = null;
             try {
@@ -65,7 +65,10 @@ public class Client {
                     try {
                         msg.flush();
                         System.out.println("msg: " + stringMsg + " is send");
+                        output.close();
                         closeDataOutputStream();
+                        closeSoket();
+                        return true;
                     } catch (IOException ex) {
                         System.err.println("IOException while sending the msg");
                     }
@@ -79,6 +82,7 @@ public class Client {
         } else {
             System.err.println("soket is null i can't send the string msg");
         }
+        return false;
     }
 
     public void closeDataOutputStream() {
@@ -106,13 +110,13 @@ public class Client {
         }
     }
 
-    public static void sendAnote(String note) {
-        instance.send(encrypter.encrypte(note));
+    public static boolean sendAnote(String note) {
+        if (new Client().send(encrypter.encrypte(note))){
+            
+            return true;
+        }
+       return false; 
     }
 
-    public static void close() {
-        instance.closeSoket();
-        instance = null;
-    }
 
 }

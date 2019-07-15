@@ -17,7 +17,7 @@
             <Image url="@../UiImages/66455186_2366067673667788_5843317922629419008_n.png" />
          </image>
       </ImageView>
-      <AnchorPane id="AnchorPane" fx:id="parent" prefHeight="464.0" prefWidth="574.0">
+      <AnchorPane id="AnchorPane" fx:id="parent" onKeyReleased="#controle" prefHeight="464.0" prefWidth="574.0">
          <children>
             <Circle fx:id="admin_avatar_container" fill="#fcebc5" layoutX="99.0" layoutY="91.0" radius="63.0" stroke="#fcd672" strokeType="INSIDE" strokeWidth="2.0" />
             <Label fx:id="receiverNameLabell" layoutX="181.0" layoutY="52.0" text="Nour El Imane" textFill="#eb4040">
@@ -28,7 +28,7 @@
             <HBox alignment="CENTER" layoutX="41.0" layoutY="400.0" spacing="20.0">
                <children>
                   <JFXTextField fx:id="noteToSendTextField" alignment="TOP_CENTER" focusColor="#81ab1f" prefHeight="25.0" prefWidth="440.0" promptText="Your note " />
-                  <ImageView fx:id="sendNoteImgV" fitHeight="37.0" fitWidth="42.0" onMouseClicked="#sendMsg" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="sendNoteImgV" fitHeight="37.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../UiImages/paper-plane.png" />
                      </image>

@@ -3,7 +3,8 @@ package Models;
 import java.util.ArrayList;
 
 public class AffineEncrypter {
-    public static final int[] ourKeys=new int[]{17,3};
+
+    public static final int[] ourKeys = new int[]{17, 3};
     public final int[] key;
     public static ArrayList<Character> alphabet;
     public static int[][] inverse;
@@ -23,10 +24,10 @@ public class AffineEncrypter {
     }
 
     public AffineEncrypter() {
-         if (!isInited) {
+        if (!isInited) {
             init();
         }
-         this.key = ourKeys;
+        this.key = ourKeys;
     }
 
     public String encrypte(String note) {
@@ -36,10 +37,13 @@ public class AffineEncrypter {
         String noteEncrypted = "";
         char[] array = note.toCharArray();
         for (char character : array) {
-            int cNum = alphabet.indexOf(character);
-            int cEnc = (key[0] * cNum + key[1]) % 26;
-            noteEncrypted += alphabet.get(cEnc).toString();
-           // System.out.println("encrypted word content " + noteEncrypted);
+            if (character != ' ') {
+                int cNum = alphabet.indexOf(character);
+                int cEnc = (key[0] * cNum + key[1]) % 26;
+                noteEncrypted += alphabet.get(cEnc).toString();
+            } else {
+                noteEncrypted += " ";
+            }
         }
         return noteEncrypted;
 
@@ -52,11 +56,14 @@ public class AffineEncrypter {
         String noteDecrypted = "";
         char[] array = note.toCharArray();
         for (char character : array) {
-            int a = getInverse(key[0]);
-            int cNum = alphabet.indexOf(character);
-            int cDec = Math.floorMod(((cNum - key[1]) * a), 26);
-            noteDecrypted += alphabet.get(cDec).toString();
-            //System.out.println("decrypted word content " + noteDecrypted);
+            if (character != ' ') {
+                int a = getInverse(key[0]);
+                int cNum = alphabet.indexOf(character);
+                int cDec = Math.floorMod(((cNum - key[1]) * a), 26);
+                noteDecrypted += alphabet.get(cDec).toString();
+            } else {
+                noteDecrypted += " ";
+            }
         }
         return noteDecrypted;
 
