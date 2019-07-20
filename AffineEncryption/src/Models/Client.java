@@ -10,12 +10,12 @@ import java.net.*;
  */
 public class Client {
 
-    public static String USED_CLIENT_IP = "192.168.56.1";
-    public static final String USED_SERVER_IP = "192.168.56.1";
+    public static String USED_CLIENT_IP ;
+    public static String USED_SERVER_IP ;
     public static InetAddress MY_IP;
     public int MY_PORT = 1080;
     public InetAddress SERVER_IP;
-    public static final int SERVER_PORT = 7007;//7000
+    public static int SERVER_PORT;
     Socket socket = null;
     DataOutputStream msg = null;
     static AffineEncrypter encrypter = new AffineEncrypter();

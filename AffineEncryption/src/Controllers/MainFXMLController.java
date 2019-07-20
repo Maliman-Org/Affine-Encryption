@@ -33,7 +33,7 @@ import javafx.stage.Stage;
  * @author Kika
  */
 public class MainFXMLController implements Initializable {
-    public static final String c="2";
+    public static boolean malika;
     public static MainFXMLController instance = null;
     @FXML
     private AnchorPane parent;
@@ -115,8 +115,8 @@ public class MainFXMLController implements Initializable {
         sendNoteImgV.setOnMouseClicked(e -> {
             {
                 if (!noteToSendTextField.getText().isEmpty()) {
-
                     if (Client.sendAnote(noteToSendTextField.getText())) {
+                        noteToSendTextField.setText("");
                         try {
                             Parent root = FXMLLoader.load(getClass().getResource("/Views/successSendFXML.fxml"));
                             Scene scene = new Scene(root);
@@ -143,8 +143,13 @@ public class MainFXMLController implements Initializable {
     }
 
     public void init() {
-        if(c.equals("2")) receiverNameLabell.setText("Malika Madene");
-        Image image = new Image("http://localhost/Affine/user"+c+".jpg");
+        Image image;
+        if(malika) {
+            receiverNameLabell.setText("Malika Madene");
+            image = new Image("http://localhost/Affine/user2.jpg");
+        }else{
+            image= new Image("http://localhost/Affine/user.jpg");
+        }
         admin_avatar_container.setFill(new ImagePattern(image));
     }
 

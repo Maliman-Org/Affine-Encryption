@@ -20,7 +20,7 @@
       <AnchorPane id="AnchorPane" fx:id="parent" prefHeight="464.0" prefWidth="574.0">
          <children>
             <Circle fx:id="admin_avatar_container" fill="#fcebc5" layoutX="99.0" layoutY="91.0" radius="63.0" stroke="#fcd672" strokeType="INSIDE" strokeWidth="2.0" />
-            <Label fx:id="receiverNameLabell" layoutX="181.0" layoutY="52.0" text="Nour El Imane" textFill="#eb4040">
+            <Label fx:id="receiverNameLabell" layoutX="181.0" layoutY="52.0" text="Nour El Imane Nadjem" textFill="#eb4040">
                <font>
                   <Font name="Bauhaus 93" size="28.0" />
                </font>

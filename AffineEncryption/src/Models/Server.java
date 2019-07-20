@@ -15,9 +15,9 @@ import javafx.stage.Stage;
  */
 public class Server {
 
-    public static final String USED_SERVER_IP = "192.168.56.1";
+    public static String USED_SERVER_IP ;
     public InetAddress MY_IP;
-    public static final int MY_PORT = 7000;//70007
+    public static int MY_PORT ;
     public final int MAX_IN_CNX = 10;
     ServerSocket serverSocket = null;
     Socket socket = null;

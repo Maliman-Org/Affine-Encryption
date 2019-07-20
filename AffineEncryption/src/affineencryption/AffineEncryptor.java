@@ -5,6 +5,7 @@
  */
 package affineencryption;
 
+import Controllers.MainFXMLController;
 import Models.AffineEncrypter;
 import Models.Client;
 import Models.Server;
@@ -32,16 +33,48 @@ public class AffineEncryptor extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        boolean imen = !true;
+        boolean local = true;
+        if (imen) {
+            if (local) {
+                Client.USED_CLIENT_IP="192.168.56.1";
+                Client.USED_SERVER_IP=Client.USED_CLIENT_IP;
+                Client.SERVER_PORT=7000;
+                Server.USED_SERVER_IP=Client.USED_CLIENT_IP;
+                Server.MY_PORT=7007;
+            }else{
+                Client.USED_CLIENT_IP="192.168.43.181";
+                Client.USED_SERVER_IP="192.168.43.90";
+                Client.SERVER_PORT=7000;
+                Server.USED_SERVER_IP=Client.USED_CLIENT_IP;
+                Server.MY_PORT=7007;
+            }
+        } else {  
+            if (local) {
+                Client.USED_CLIENT_IP="192.168.56.1";
+                Client.USED_SERVER_IP=Client.USED_CLIENT_IP;
+                Client.SERVER_PORT=7007;
+                Server.USED_SERVER_IP=Client.USED_CLIENT_IP;
+                Server.MY_PORT=7000;
+            }else{
+                Client.USED_CLIENT_IP="192.168.43.90";
+                Client.USED_SERVER_IP="192.168.43.181";
+                Client.SERVER_PORT=7007;
+                Server.USED_SERVER_IP=Client.USED_CLIENT_IP;
+                Server.MY_PORT=7000;                
+            }
+        }
+        MainFXMLController.malika=!imen;
         Runnable runnable = new Runnable() {
             public void run() {
                 new Server().start();
             }
         };
-        Thread thread=new Thread(runnable);
-                thread.start();
+        Thread thread = new Thread(runnable);
+        thread.start();
+
         launch(args);
 
-        
-    }   
+    }
 
 }
