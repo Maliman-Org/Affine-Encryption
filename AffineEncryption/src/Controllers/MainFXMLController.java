@@ -33,42 +33,43 @@ import javafx.stage.Stage;
  * @author Kika
  */
 public class MainFXMLController implements Initializable {
-    public static boolean malika;
-    public static MainFXMLController instance = null;
+    public static boolean isUser2;
+    public static MainFXMLController instance;
     @FXML
     private AnchorPane parent;
 
     @FXML
-    private Circle admin_avatar_container;
+    private Circle avatar_container;
 
     @FXML
-    private JFXTextField noteToSendTextField;
+    private JFXTextField noteToSendField;
 
     @FXML
-    private ImageView sendNoteImgV;
+    private ImageView sendNoteImgVBTN;
 
     @FXML
     private Label receivedNoteLabel;
     
     @FXML        
-    private Label receiverNameLabell;        
+    private Label receiverNameLabel;        
 
     @FXML
-    private Label cryptedNoteLabe;
+    private Label cryptedNoteLabel;
+    
 
     @FXML
     void hideCryptedNote(MouseEvent event) {
-
+        cryptedNoteLabel.setVisible(false);
     }
 
     @FXML
     void showCryptedNote(MouseEvent event) {
-
+        cryptedNoteLabel.setVisible(true);
     }
 
     void controle() {
-        if (!noteToSendTextField.getText().isEmpty()) {
-            char[] array = noteToSendTextField.getText().toLowerCase().toCharArray();
+        if (!noteToSendField.getText().isEmpty()) {
+            char[] array = noteToSendField.getText().toLowerCase().toCharArray();
             String note = "";
             for (char c : array) {
                 if (c != ' ') {
@@ -79,16 +80,16 @@ public class MainFXMLController implements Initializable {
                     note += c;
                 }
             }
-            noteToSendTextField.setText(note);
-            noteToSendTextField.positionCaret(note.length());
+            noteToSendField.setText(note);
+            noteToSendField.positionCaret(note.length());
         }
     }
 
     @FXML
     void sendMsg(MouseEvent event) {
-        if (!noteToSendTextField.getText().isEmpty()) {
-            if (Client.sendAnote(noteToSendTextField.getText())) {
-                noteToSendTextField.setText("");
+        if (!noteToSendField.getText().isEmpty()) {
+            if (Client.sendAnote(noteToSendField.getText())) {
+                noteToSendField.setText("");
                 try {
                     Parent root = FXMLLoader.load(getClass().getResource("/Views/successSendFXML.fxml"));
                     Scene scene = new Scene(root);
@@ -108,15 +109,15 @@ public class MainFXMLController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        instance = this;
-        noteToSendTextField.setOnKeyReleased(e -> {
+        instance=this;
+        noteToSendField.setOnKeyReleased(e -> {
             controle();
         });
-        sendNoteImgV.setOnMouseClicked(e -> {
+        sendNoteImgVBTN.setOnMouseClicked(e -> {
             {
-                if (!noteToSendTextField.getText().isEmpty()) {
-                    if (Client.sendAnote(noteToSendTextField.getText())) {
-                        noteToSendTextField.setText("");
+                if (!noteToSendField.getText().isEmpty()) {
+                    if (Client.sendAnote(noteToSendField.getText())) {
+                        noteToSendField.setText("");
                         try {
                             Parent root = FXMLLoader.load(getClass().getResource("/Views/successSendFXML.fxml"));
                             Scene scene = new Scene(root);
@@ -138,19 +139,19 @@ public class MainFXMLController implements Initializable {
 
     public void setTheLastNote(String note, String cryptedNote) {
         receivedNoteLabel.setText(note);
-        cryptedNoteLabe.setText(cryptedNote);
-        cryptedNoteLabe.setVisible(true);
+        cryptedNoteLabel.setText(cryptedNote);
+        cryptedNoteLabel.setVisible(true);
     }
 
     public void init() {
         Image image;
-        if(malika) {
-            receiverNameLabell.setText("Malika Madene");
-            image = new Image("http://localhost/Affine/user2.jpg");
+        if(isUser2) {
+            receiverNameLabel.setText("Malika Madene");
+            image = new Image("/UiImages/user2.jpg");
         }else{
-            image= new Image("http://localhost/Affine/user.jpg");
+            image= new Image("/UiImages/user1.jpg");
         }
-        admin_avatar_container.setFill(new ImagePattern(image));
+        avatar_container.setFill(new ImagePattern(image));
     }
 
 }

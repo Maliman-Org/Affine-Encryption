@@ -18,7 +18,7 @@ public class Server {
     public static String USED_SERVER_IP ;
     public InetAddress MY_IP;
     public static int MY_PORT ;
-    public final int MAX_IN_CNX = 10;
+    public final int MAX_IN_CNX = 1;
     ServerSocket serverSocket = null;
     Socket socket = null;
     DataInputStream msg;

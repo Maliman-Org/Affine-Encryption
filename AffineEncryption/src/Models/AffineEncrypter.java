@@ -18,7 +18,7 @@ public class AffineEncrypter {
             this.key = key;
         } else {
             this.key = ourKeys;
-            System.err.println("nuuuuulll");
+            System.err.println("we didn't like its params we will use ours -_-");
         }
 
     }
@@ -36,11 +36,11 @@ public class AffineEncrypter {
         }
         String noteEncrypted = "";
         char[] array = note.toCharArray();
-        for (char character : array) {
-            if (character != ' ') {
-                int cNum = alphabet.indexOf(character);
-                int cEnc = (key[0] * cNum + key[1]) % 26;
-                noteEncrypted += alphabet.get(cEnc).toString();
+        for (char currentChar : array) {
+            if (currentChar != ' ') {
+                int currentCharIndex = alphabet.indexOf(currentChar);
+                int currentCharEncryption = (key[0] * currentCharIndex + key[1]) % 26;
+                noteEncrypted += alphabet.get(currentCharEncryption).toString();
             } else {
                 noteEncrypted += " ";
             }
@@ -55,12 +55,12 @@ public class AffineEncrypter {
         }
         String noteDecrypted = "";
         char[] array = note.toCharArray();
-        for (char character : array) {
-            if (character != ' ') {
+        for (char currentChar : array) {
+            if (currentChar != ' ') {
                 int a = getInverse(key[0]);
-                int cNum = alphabet.indexOf(character);
-                int cDec = Math.floorMod(((cNum - key[1]) * a), 26);
-                noteDecrypted += alphabet.get(cDec).toString();
+                int currentCharIndex = alphabet.indexOf(currentChar);
+                int currentCharDecryption = Math.floorMod(((currentCharIndex - key[1]) * a), 26);
+                noteDecrypted += alphabet.get(currentCharDecryption).toString();
             } else {
                 noteDecrypted += " ";
             }

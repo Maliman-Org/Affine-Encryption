@@ -28,8 +28,6 @@ public class WelcomeScreenController implements Initializable {
 
     @FXML
     private AnchorPane parent;
-    @FXML
-    private JFXButton nextBtn;
 
     @FXML
     void nextBtnClicked(MouseEvent event) throws IOException {
@@ -41,15 +39,14 @@ public class WelcomeScreenController implements Initializable {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         MainFXMLController controller = loader.getController();
+        controller.init();
         stage.setResizable(false);
         stage.show();
-        controller.init();
 
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
     }
 
 }

@@ -33,9 +33,9 @@ public class AffineEncryptor extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        boolean imen = !true;
+        boolean user1 = true;
         boolean local = true;
-        if (imen) {
+        if (user1) {
             if (local) {
                 Client.USED_CLIENT_IP="192.168.56.1";
                 Client.USED_SERVER_IP=Client.USED_CLIENT_IP;
@@ -64,7 +64,7 @@ public class AffineEncryptor extends Application {
                 Server.MY_PORT=7000;                
             }
         }
-        MainFXMLController.malika=!imen;
+        MainFXMLController.isUser2=!user1;
         Runnable runnable = new Runnable() {
             public void run() {
                 new Server().start();
