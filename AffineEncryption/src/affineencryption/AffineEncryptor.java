@@ -33,7 +33,7 @@ public class AffineEncryptor extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        boolean user1 = true;
+        boolean user1 = !true;
         boolean local = true;
         if (user1) {
             if (local) {
