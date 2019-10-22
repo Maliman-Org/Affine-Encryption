@@ -23,7 +23,6 @@ public class Server {
     Socket socket = null;
     DataInputStream msg;
     static AffineEncrypter encrypter = new AffineEncrypter();
-    
 
     public Server() {
         try {
@@ -108,9 +107,5 @@ public class Server {
         }
 
     }
-
- /*   public static void main(String[] args) {
-        new Server().start();
-    }*/
 
 }
