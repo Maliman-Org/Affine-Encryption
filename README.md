@@ -13,6 +13,10 @@
 | First User Interface | Second User Interface |
 | ------------- |:-------------:|
 | ![alt text](https://github.com/madenemalika/Affine-Encryption/blob/master/AffineEncryption/src/Screenshots/user%201.PNG "First User Interface" ) | ![alt text](https://github.com/madenemalika/Affine-Encryption/blob/master/AffineEncryption/src/Screenshots/user%202.PNG "Second User Interface" ) |
+
+| First User Recieve The Message | Second User Send The Message |
+| ------------- |:-------------:|
+| ![alt text](https://github.com/madenemalika/Affine-Encryption/blob/master/AffineEncryption/src/Screenshots/user%202%20get%20the%20msg.PNG "msg recieved" ) | ![alt text](https://github.com/madenemalika/Affine-Encryption/blob/master/AffineEncryption/src/Screenshots/user%202%20get%20the%20msg.PNG "msg sended" ) |
  
  ## IDE & Libraries used 🔧
  * NetBeans IDE 8.2
