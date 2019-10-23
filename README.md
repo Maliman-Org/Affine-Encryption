@@ -80,7 +80,7 @@
   | Y-b | 15 | 16 | 5 | 5 | 4 |
   | ((Y-b).a')mod 26 | 7 | 4 | 11 | 11 | 14 |
   | Plaintxt | H | E | L | L | O |
- ## Peer To Peer Using Sockets 🔗
+ ## Peer To Peer Using Sockets 🔗 💡
  
  According to requirements, our system should deliver notes in the runtime without any conditions of order (the user can receive a note
  at any time & as much as his parterner want to; we also can't determine which one of them will be the first to inisiate the
