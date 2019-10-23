@@ -2,7 +2,7 @@
 
  ## Requierements 📃
  1. Create a peer to peer desktop application, in order to send notes between two users. 
- 2. The message must be ecrypted during the send, and it must be decrypted when it is recieved.
+ 2. The message must be ecrypted during the send, and it must be decrypted when it is received.
 
  ## Screenshots  	📷
 | Main Interface |
@@ -14,9 +14,9 @@
 | ------------- |:-------------:|
 | ![alt text](https://github.com/madenemalika/Affine-Encryption/blob/master/AffineEncryption/src/Screenshots/user%201.PNG "First User Interface" ) | ![alt text](https://github.com/madenemalika/Affine-Encryption/blob/master/AffineEncryption/src/Screenshots/user%202.PNG "Second User Interface" ) |
 
-| First User Recieve The Message | Second User Send The Message |
+| First User Receive The Message | Second User Send The Message |
 | ------------- |:-------------:|
-| ![alt text](https://github.com/madenemalika/Affine-Encryption/blob/master/AffineEncryption/src/Screenshots/user%202%20get%20the%20msg.PNG "msg recieved" ) | ![alt text](https://github.com/madenemalika/Affine-Encryption/blob/master/AffineEncryption/src/Screenshots/user%202%20get%20the%20msg.PNG "msg sended" ) |
+| ![alt text](https://github.com/madenemalika/Affine-Encryption/blob/master/AffineEncryption/src/Screenshots/user%202%20get%20the%20msg.PNG "msg recieved" ) | ![alt text](https://github.com/madenemalika/Affine-Encryption/blob/master/AffineEncryption/src/Screenshots/user%201%20with%20msg.PNG "msg sended" ) |
  
  ## IDE & Libraries used 🔧
  * NetBeans IDE 8.2
