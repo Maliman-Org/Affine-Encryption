@@ -82,8 +82,8 @@
   | Plaintxt | H | E | L | L | O |
  ## Peer To Peer Using Sockets 🔗
  
- To create this project, we have choosed to build our peer to peer architecture using sockets from skratch...
- According to requirements, our system should deliver notes in the runtime without any conditions of order (the user can receive
+ * To create this project, we have choosed to build our peer to peer architecture using sockets from skratch...
+ * According to requirements, our system should deliver notes in the runtime without any conditions of order (the user can receive
  at any time a note & as much as his parterner want to and also we can't determine which one of them will be the first to inisiate the 
  connexion)
  
