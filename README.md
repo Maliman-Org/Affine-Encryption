@@ -42,7 +42,7 @@
   | Cyphertext | S | T | I | I | H |
   
   
-  ### Decrypting 🔒
+  ### Decrypting 🔓
   
    1. Remplace every letter by its rank in the alphaber starting by 0.
    2. Calculate using the decryption fonction D(y)=((y-b)* a’) mod 26 ( knowig that a' is the modular reverse of a versus 26), of each caracter.
