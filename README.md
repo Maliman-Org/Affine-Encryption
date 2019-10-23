@@ -95,8 +95,8 @@
      * Change the boolean variable in the same class named "user1" to true.
      * In the else bloc of *if(local)* Change the value "Client.USED_CLIENT_IP" to your ip addres, and "Client.USED_SERVER_IP" to the ip adress of user2.
    * For user2:
-    * Change the boolean variable in the same class named "user1" to false.
-    * In the else bloc of *if(local)* Change the value "Client.USED_CLIENT_IP" to your ip addres, and "Client.USED_SERVER_IP" to the ip adress of user2.
+     * Change the boolean variable in the same class named "user1" to false.
+     * In the else bloc of *if(local)* Change the value "Client.USED_CLIENT_IP" to your ip addres, and "Client.USED_SERVER_IP" to the ip adress of user2.
    
  ## Screenshots  	📷
  
