@@ -2,7 +2,7 @@
 
  ## Requirements 📃
  1. Create a peer to peer desktop application, in order to send notes between two users. 
- 2. The message must be ecrypted during the send, and it must be decrypted when it is received.
+ 2. The note must be ecrypted during the send, and it must be decrypted when it is received.
  3. Use Affine cipher.
  
  ## Affine Cipher Description
@@ -16,7 +16,7 @@
 | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | 26 |
 
   2. Choose two integer numbers a and b as key. 
-  3. Calculate (a.x+b) mod 26 (knowing that x : the rank of the letter that we want to ecrypte it).
+  3. Calculate (a.x+b) mod 26 (knowing that x : the rank of the letter that we want to ecrypte ).
   
   #### Exemple
   
