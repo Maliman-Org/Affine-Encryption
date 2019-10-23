@@ -82,15 +82,19 @@
   | Plaintxt | H | E | L | L | O |
  ## Peer To Peer Using Sockets 🔗
  
- According to requirements, our system should deliver notes in the runtime without any conditions of order (the user can receive
- at any time a note & as much as his parterner want to; and also we can't determine which one of them will be the first to inisiate the 
+ According to requirements, our system should deliver notes in the runtime without any conditions of order (the user can receive a note
+ at any time & as much as his parterner want to; we also can't determine which one of them will be the first to inisiate the
  connexion).
  
  To create this project, we have choosed to build our peer to peer architecture using sockets from skratch following these steps: 
+ 
  1. creating a Server class that listens & receives notes.
  2. creating anothe Client class in order to send notes.
  3. assign a Client & a Server for each user.
- 4. run the server when the application lunches
+ 4. run the server when the application lunches.
+ 
+ This solution helped us to avoide any delay of receiving notes due to socket timeout and the usfulness of leaving sockets opened during
+ all the execution whitout actually needing it. 
  
  
  ## Execution 🔌🔨
