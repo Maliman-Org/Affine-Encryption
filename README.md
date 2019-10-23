@@ -1,4 +1,4 @@
-# MaliMan Note Ecryptor 👩‍🎓 💻 🔑 🔒
+# MaliMan Note Ecryptor 👩‍🎓 💻 🔑 
 
  ## Requirements 📃
  1. Create a peer to peer desktop application, in order to send notes between two users. 
@@ -7,7 +7,8 @@
  
  ## Affine Cipher Description
  
-  ### Encrypting
+  ### Encrypting 🔒
+  
    1. Remplace every letter by its rank in the alphaber starting by 0 :
    
 | A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z |
@@ -18,6 +19,7 @@
   3. Calculate (a.x+b) mod 26 (knowing that x : the rank of the letter that we want to ecrypte it).
   
   #### Exemple
+  
   The plaintext to be encrypted is "HELLO" , we take a=17 , and b=3.
   
   | Plaintxt | H | E | L | L | O |
@@ -40,13 +42,15 @@
   | Cyphertext | S | T | I | I | H |
   
   
-  ### Decrypting
+  ### Decrypting 🔒
+  
    1. Remplace every letter by its rank in the alphaber starting by 0.
-   2. Calculate using the decryption fonction D(y)=((y-b)*a’) mod 26 ( knowig that a' is the modular reverse of a versus 26), of each caracter.
+   2. Calculate using the decryption fonction D(y)=((y-b)* a’) mod 26 ( knowig that a' is the modular reverse of a versus 26), of each caracter.
    3. Decrypte the ciphertext using the table.
 
 
   #### Exemple
+  
   Finishing with same exemple, a'=23 :
   
   | Cyphertext | S | T | I | I | H |
@@ -76,9 +80,26 @@
   | Y-b | 15 | 16 | 5 | 5 | 4 |
   | ((Y-b).a')mod 26 | 7 | 4 | 11 | 11 | 14 |
   | Plaintxt | H | E | L | L | O |
-  
-  
+ 
+ ##Execution 🔌🔨
+ 
+ To execute the application we have to make some changes:
+ 1. if the execution is local (one computer):
+   * Change the value of the boolean variable named "local" in the main class of the class AffineEncyptor.java to true.
+   * In the bloc of *if(local)*, change the value "Client.USED_CLIENT_IP" to your ip address.
+   * execute two time , the first one the boolean variable in the same class named "user1" must be true, and in the second one change it to false.
+   
+ 2. else (two computers):
+   * Change the value of the boolean variable named "local" in the main class of the class AffineEncyptor.java to false.
+   * For user1 :
+     * Change the boolean variable in the same class named "user1" to true.
+     * In the else bloc of *if(local)* Change the value "Client.USED_CLIENT_IP" to your ip addres, and "Client.USED_SERVER_IP" to the ip adress of user2.
+   * for user2:
+    * Change the boolean variable in the same class named "user1" to false.
+    * In the else bloc of *if(local)* Change the value "Client.USED_CLIENT_IP" to your ip addres, and "Client.USED_SERVER_IP" to the ip adress of user2.
+   
  ## Screenshots  	📷
+ 
 | Main Interface |
 | ------------- |
 |![alt text](https://github.com/madenemalika/Affine-Encryption/blob/master/AffineEncryption/src/Screenshots/main%20page.PNG "Welcome interface" )|
@@ -93,6 +114,7 @@
 | ![alt text](https://github.com/madenemalika/Affine-Encryption/blob/master/AffineEncryption/src/Screenshots/user%202%20get%20the%20msg.PNG "msg recieved" ) | ![alt text](https://github.com/madenemalika/Affine-Encryption/blob/master/AffineEncryption/src/Screenshots/user%201%20with%20msg.PNG "msg sended" ) |
  
  ## IDE & Libraries used 🔧
+ 
  * NetBeans IDE 8.2
  * JDK 8
  * Jfoenix 8.0.1
