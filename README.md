@@ -9,13 +9,13 @@
  
   ### Encrypting 🔒
   
-   1. Remplace every letter by its rank in the alphaber starting by 0 :
+   1. Replace every letter by its rank in alphabets starting by 0 :
    
 | A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z |
 | -- |:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:| --:|
 | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | 26 |
 
-  2. Choose two integer numbers a and b as key. 
+  2. Choose two integer numbers a and b as keys. 
   3. Calculate (a.x+b) mod 26 (knowing that x : the rank of the letter that we want to ecrypte ).
   
   #### Exemple
@@ -44,7 +44,7 @@
   
   ### Decrypting 🔓
   
-   1. Remplace every letter by its rank in the alphaber starting by 0.
+   1. Replace every letter by its rank in alphabet starting by 0.
    2. Calculate using the decryption fonction D(y)=((y-b)* a’) mod 26 ( knowig that a' is the modular reverse of a versus 26), of each caracter.
    3. Decrypte the ciphertext using the table.
 
@@ -96,7 +96,7 @@
      * In the else bloc of *if(local)* Change the value "Client.USED_CLIENT_IP" to your ip addres, and "Client.USED_SERVER_IP" to the ip adress of user2.
    * For user2:
      * Change the boolean variable in the same class named "user1" to false.
-     * In the else bloc of *if(local)* Change the value "Client.USED_CLIENT_IP" to your ip addres, and "Client.USED_SERVER_IP" to the ip adress of user2.
+     * In the else bloc of *if(local)* Change the value "Client.USED_CLIENT_IP" to your ip address, and "Client.USED_SERVER_IP" to the ip adress of user2.
    
  ## Screenshots  	📷
  
