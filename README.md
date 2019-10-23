@@ -94,7 +94,7 @@
  4. run the server when the application lunches.
  
  This solution helped us to avoide any delay of receiving notes due to socket timeout and the usfulness of leaving sockets opened during
- all the execution whitout actually needing it. 
+ all the execution whitout actually needing it...
  
  
  ## Execution 🔌🔨
