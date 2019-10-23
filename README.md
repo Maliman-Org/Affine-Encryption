@@ -81,7 +81,7 @@
   | ((Y-b).a')mod 26 | 7 | 4 | 11 | 11 | 14 |
   | Plaintxt | H | E | L | L | O |
  
- ##Execution 🔌🔨
+ ## Execution 🔌🔨
  
  To execute the application we have to make some changes:
  1. if the execution is local (one computer):
