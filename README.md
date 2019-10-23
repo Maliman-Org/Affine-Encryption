@@ -25,6 +25,7 @@
   | X | 0 | 5 | 5 | 8 | 13 | 4 | 2 | 8 | 15 | 7 | 4 | 17 |
   
   Now, take each value of x, and calculate the result of the equation : (5x + 8) mod 26, for each character.
+  
   | Plaintxt | A | F | F | I | N | E | C | I | P | H | E | R |
   | ------- |:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:| --:|
   | X | 0 | 5 | 5 | 8 | 13 | 4 | 2 | 8 | 15 | 7 | 4 | 17 |
