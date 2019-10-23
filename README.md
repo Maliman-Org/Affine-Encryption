@@ -18,26 +18,26 @@
   3. Calculate (a.x+b) mod 26 (knowing that x : the rank of the letter that we want to ecrypte it).
   
   #### Exemple
-  The plaintext to be encrypted is "AFFINE CIPHER" , we take a=5 , and b=8.
+  The plaintext to be encrypted is "HELLO" , we take a=17 , and b=3.
   
-  | Plaintxt | A | F | F | I | N | E | C | I | P | H | E | R |
-  | ------- |:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:| --:|
-  | X | 0 | 5 | 5 | 8 | 13 | 4 | 2 | 8 | 15 | 7 | 4 | 17 |
+  | Plaintxt | H | E | L | L | O |
+  | ------- |:--:|:--:|:--:|:--:| --:|
+  | X | 7 | 4 | 11 | 11 | 14 |
   
-  Now, take each value of x, and calculate the result of the equation : (5x + 8) mod 26, for each character.
+  Now, take each value of x, and calculate the result of the equation : (17x + 3) mod 26, for each character.
   
-  | Plaintext | A | F | F | I | N | E | C | I | P | H | E | R |
-  | ------- |:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:| --:|
-  | X | 0 | 5 | 5 | 8 | 13 | 4 | 2 | 8 | 15 | 7 | 4 | 17 |
-  | (5x+8)mod26 | 8 | 7 | 7 | 22 | 21 | 2 | 18 | 22 | 5 | 17 | 2 | 15 |
+  | Plaintxt | H | E | L | L | O |
+  | ------- |:--:|:--:|:--:|:--:| --:|
+  | X | 7 | 4 | 11 | 11 | 14 |
+  | (17x+3)mod26 | 18 | 19 | 8 | 8 | 9 |
   
   The final step in encrypting the message is to look up each numeric value in the table for the corresponding letters.
   
-  | Plaintext | A | F | F | I | N | E | C | I | P | H | E | R |
-  | ------- |:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:| --:|
-  | X | 0 | 5 | 5 | 8 | 13 | 4 | 2 | 8 | 15 | 7 | 4 | 17 |
-  | (5x+8)mod26 | 8 | 7 | 7 | 22 | 21 | 2 | 18 | 22 | 5 | 17 | 2 | 15 |
-  | Cyphertext | I | H | H | W | V | C | S | W | F | R | C | P |
+  | Plaintxt | H | E | L | L | O |
+  | ------- |:--:|:--:|:--:|:--:| --:|
+  | X | 7 | 4 | 11 | 11 | 14 |
+  | (17x+3)mod26 | 18 | 19 | 8 | 8 | 9 |
+  | Cyphertext | S | T | I | I | H |
   
   
   ### Decrypting
@@ -47,25 +47,36 @@
 
 
   #### Exemple
-  Finishing with same exemple, a'=21 :
+  Finishing with same exemple, a'=23 :
   
-  | Cyphertext | I | H | H | W | V | C | S | W | F | R | C | P |
-  | ------- |:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:| --:|
-  | Y | 8 | 7 | 7 | 22 | 21 | 2 | 18 | 22 | 5 | 17 | 2 | 15 |
+  | Cyphertext | S | T | I | I | H |
+  | ------- |:--:|:--:|:--:|:--:| --:|
+  | Y | 18 | 19 | 8 | 8 | 9 |
   
   Subtract b from each number:
   
-  | Cyphertext | I | H | H | W | V | C | S | W | F | R | C | P |
-  | ------- |:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:| --:|
-  | Y | 8 | 7 | 7 | 22 | 21 | 2 | 18 | 22 | 5 | 17 | 2 | 15 |
-  | Y-b | 0 | -1 | -1 | 14 | 13 | -6 | 10 | 14 | -3 | 9 | -6 | 7 |
+  | Cyphertext | S | T | I | I | H |
+  | ------- |:--:|:--:|:--:|:--:| --:|
+  | Y | 18 | 19 | 8 | 8 | 9 |
+  | Y-b | 15 | 16 | 5 | 5 | 4 |
   
-  Multiply by a':
+  Multiply by a' then take mod 26:
   
-  | Cyphertext | I | H | H | W | V | C | S | W | F | R | C | P |
-  | ------- |:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:| --:|
-  | Y | 8 | 7 | 7 | 22 | 21 | 2 | 18 | 22 | 5 | 17 | 2 | 15 |
-  | Y-b | 0 | -1 | -1 | 14 | 13 | -6 | 10 | 14 | -3 | 9 | -6 | 7 |
+  | Cyphertext | S | T | I | I | H |
+  | ------- |:--:|:--:|:--:|:--:| --:|
+  | Y | 18 | 19 | 8 | 8 | 9 |
+  | Y-b | 15 | 16 | 5 | 5 | 4 |
+  | ((Y-b).a')mod 26 | 7 | 4 | 11 | 11 | 14 |
+  
+  The final step in decrypting the ciphertext is to use the table to convert numeric values back into letters:
+  
+  | Cyphertext | S | T | I | I | H |
+  | ------- |:--:|:--:|:--:|:--:| --:|
+  | Y | 18 | 19 | 8 | 8 | 9 |
+  | Y-b | 15 | 16 | 5 | 5 | 4 |
+  | ((Y-b).a')mod 26 | 7 | 4 | 11 | 11 | 14 |
+  | Plaintxt | H | E | L | L | O |
+  
   
  ## Screenshots  	📷
 | Main Interface |
