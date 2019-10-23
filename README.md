@@ -39,7 +39,7 @@
   | ------- |:--:|:--:|:--:|:--:| --:|
   | X | 7 | 4 | 11 | 11 | 14 |
   | (17x+3)mod26 | 18 | 19 | 8 | 8 | 9 |
-  | Cyphertext | S | T | I | I | H |
+  | Ciphertext | S | T | I | I | H |
   
   
   ### Decrypting 🔓
@@ -53,20 +53,20 @@
   
   Finishing with same exemple, a'=23 :
   
-  | Cyphertext | S | T | I | I | H |
+  | Ciphertext | S | T | I | I | H |
   | ------- |:--:|:--:|:--:|:--:| --:|
   | Y | 18 | 19 | 8 | 8 | 9 |
   
   Subtract b from each number:
   
-  | Cyphertext | S | T | I | I | H |
+  | Ciphertext | S | T | I | I | H |
   | ------- |:--:|:--:|:--:|:--:| --:|
   | Y | 18 | 19 | 8 | 8 | 9 |
   | Y-b | 15 | 16 | 5 | 5 | 4 |
   
   Multiply by a' then take mod 26:
   
-  | Cyphertext | S | T | I | I | H |
+  | Ciphertext | S | T | I | I | H |
   | ------- |:--:|:--:|:--:|:--:| --:|
   | Y | 18 | 19 | 8 | 8 | 9 |
   | Y-b | 15 | 16 | 5 | 5 | 4 |
@@ -74,12 +74,13 @@
   
   The final step in decrypting the ciphertext is to use the table to convert numeric values back into letters:
   
-  | Cyphertext | S | T | I | I | H |
+  | Ciphertext | S | T | I | I | H |
   | ------- |:--:|:--:|:--:|:--:| --:|
   | Y | 18 | 19 | 8 | 8 | 9 |
   | Y-b | 15 | 16 | 5 | 5 | 4 |
   | ((Y-b).a')mod 26 | 7 | 4 | 11 | 11 | 14 |
   | Plaintxt | H | E | L | L | O |
+  
  ## Peer To Peer Using Sockets 🔗 💡
  
  According to requirements, our system should deliver notes in the runtime without any conditions of order (the user can receive a note
