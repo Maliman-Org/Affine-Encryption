@@ -14,6 +14,14 @@
 | -- |:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:| --:|
 | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | 26 |
 
+  2. Choose two integer numbers a and b as key. 
+  3. Calculate (a.x+b) mod 26 (knowing that x : the rank of the letter that we want to ecrypte it).
+  
+  #### Exemple
+  the plaintext to be encrypted is "AFFINE CIPHER, we take a=5 , and b=8.
+  | Plaintxt | A | F | F | I | N | E | C | I | P | H | E | R |
+  |  ------- |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:------- |-------:|
+  | X | 0 | 5 | 5 | 8 | 13 | 4 | 2 | 8 | 15 | 7 | 4 | 17 |
 
  ## Screenshots  	📷
 | Main Interface |
