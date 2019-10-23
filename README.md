@@ -3,6 +3,9 @@
  ## Requirements 📃
  1. Create a peer to peer desktop application, in order to send notes between two users. 
  2. The message must be ecrypted during the send, and it must be decrypted when it is received.
+ 3. Use Affine cipher.
+ 
+ ## Affine Cipher Description
 
  ## Screenshots  	📷
 | Main Interface |
