@@ -7,7 +7,7 @@
  
  ## Affine Cipher Description
  
-  ### Encryption
+  ### Encrypting
    1. Remplace every letter by its rank in the alphaber starting by 0 :
    
 | A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z |
@@ -18,7 +18,7 @@
   3. Calculate (a.x+b) mod 26 (knowing that x : the rank of the letter that we want to ecrypte it).
   
   #### Exemple
-  the plaintext to be encrypted is "AFFINE CIPHER, we take a=5 , and b=8.
+  The plaintext to be encrypted is "AFFINE CIPHER" , we take a=5 , and b=8.
   
   | Plaintxt | A | F | F | I | N | E | C | I | P | H | E | R |
   | ------- |:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:| --:|
@@ -40,7 +40,33 @@
   | Cyphertext | I | H | H | W | V | C | S | W | F | R | C | P |
   
   
+  ### Decrypting
+   1. Remplace every letter by its rank in the alphaber starting by 0.
+   2. Calculate using the decryption fonction D(y)=((y-b)*a’) mod 26 ( knowig that a' is the modular reverse of a versus 26), of each caracter.
+   3. Decrypte the ciphertext using the table.
 
+
+  #### Exemple
+  Finishing with same exemple, a'=21 :
+  
+  | Cyphertext | I | H | H | W | V | C | S | W | F | R | C | P |
+  | ------- |:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:| --:|
+  | Y | 8 | 7 | 7 | 22 | 21 | 2 | 18 | 22 | 5 | 17 | 2 | 15 |
+  
+  Subtract b from each number:
+  
+  | Cyphertext | I | H | H | W | V | C | S | W | F | R | C | P |
+  | ------- |:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:| --:|
+  | Y | 8 | 7 | 7 | 22 | 21 | 2 | 18 | 22 | 5 | 17 | 2 | 15 |
+  | Y-b | 0 | -1 | -1 | 14 | 13 | -6 | 10 | 14 | -3 | 9 | -6 | 7 |
+  
+  Multiply by a':
+  
+  | Cyphertext | I | H | H | W | V | C | S | W | F | R | C | P |
+  | ------- |:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:| --:|
+  | Y | 8 | 7 | 7 | 22 | 21 | 2 | 18 | 22 | 5 | 17 | 2 | 15 |
+  | Y-b | 0 | -1 | -1 | 14 | 13 | -6 | 10 | 14 | -3 | 9 | -6 | 7 |
+  
  ## Screenshots  	📷
 | Main Interface |
 | ------------- |
