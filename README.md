@@ -88,8 +88,8 @@
  
  To create this project, we have choosed to build our peer to peer architecture using sockets from skratch following these steps: 
  
- 1. creating a Server class that listens & receives notes.
- 2. creating anothe Client class in order to send notes.
+ 1. creating a Server class that listens :ear: & receives 📭 notes.
+ 2. creating anothe Client class in order to send notes :scroll: .
  3. assign a Client & a Server for each user.
  4. run the server when the application lunches.
  
