@@ -8,6 +8,11 @@
 | Main Interface |
 | ------------- |
 |![alt text](https://github.com/madenemalika/Affine-Encryption/blob/master/AffineEncryption/src/Screenshots/main%20page.PNG "Welcome interface" )|
+
+
+| First User Interface | Second User Interface |
+| ------------- |:-------------:|
+| ![alt text](https://github.com/madenemalika/Affine-Encryption/blob/master/AffineEncryption/src/Screenshots/user%201.PNG "First User Interface" ) | ![alt text](https://github.com/madenemalika/Affine-Encryption/blob/master/AffineEncryption/src/Screenshots/user%202.PNG "Second User Interface" ) |
  
  ## IDE & Libraries used 🔧
  * NetBeans IDE 8.2
