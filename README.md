@@ -5,6 +5,7 @@
  2. The message must be ecrypted during the send, and it must be decrypted when it is recieved.
 
  ## Screenshots  	📷
+ ![alt text](https://github.com/madenemalika/Affine-Encryption/blob/master/AffineEncryption/src/Screenshots/main%20page.PNG "Welcome interface" )
 
  ## IDE & Libraries used 🔧
  * NetBeans IDE 8.2
