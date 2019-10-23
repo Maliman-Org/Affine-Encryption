@@ -26,10 +26,18 @@
   
   Now, take each value of x, and calculate the result of the equation : (5x + 8) mod 26, for each character.
   
-  | Plaintxt | A | F | F | I | N | E | C | I | P | H | E | R |
+  | Plaintext | A | F | F | I | N | E | C | I | P | H | E | R |
   | ------- |:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:| --:|
   | X | 0 | 5 | 5 | 8 | 13 | 4 | 2 | 8 | 15 | 7 | 4 | 17 |
   | (5x+8)mod26 | 8 | 7 | 7 | 22 | 21 | 2 | 18 | 22 | 5 | 17 | 2 | 15 |
+  
+  The final step in encrypting the message is to look up each numeric value in the table for the corresponding letters.
+  
+  | Plaintext | A | F | F | I | N | E | C | I | P | H | E | R |
+  | ------- |:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:| --:|
+  | X | 0 | 5 | 5 | 8 | 13 | 4 | 2 | 8 | 15 | 7 | 4 | 17 |
+  | (5x+8)mod26 | 8 | 7 | 7 | 22 | 21 | 2 | 18 | 22 | 5 | 17 | 2 | 15 |
+  | Cyphertext | I | H | H | W | V | C | S | W | F | R | C | P |
   
   
 
