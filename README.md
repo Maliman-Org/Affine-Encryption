@@ -1,4 +1,4 @@
-# MaliMan Note Ecryptor 👩‍🎓 💻 🔑 
+# MaliMan Note Ecryptor 👩‍🎓 💻 🔑 💌
 
  ## Requirements 📃
  1. Create a peer to peer desktop application, in order to send notes between two users. 
